@@ -10,10 +10,13 @@ struct Buku {
     int jumlah;
 };
 
+void loadData(Buku buku[], int &jumlahData);
+
 int main() {
 
     Buku buku[100];
     int jumlahData = 0;
+    loadData(buku, jumlahData);
     int pilihan = 0;
     
     cout << "-----Selamat datang di Perpustakaan Mini-----" << endl;
@@ -55,4 +58,16 @@ int main() {
     } while (pilihan != 8);
     
     return 0;
+}
+
+void loadData(Buku buku[], int &jumlahData) {
+    ifstream file("buku.txt");
+    if(file.is_open()) {
+        while(file >> buku[jumlahData].judul >> buku[jumlahData].pengarang >> buku[jumlahData].tahunTerbit >> buku[jumlahData].jumlah) {
+            jumlahData++;
+        }
+        file.close();
+    } else {
+        cout << "File tidak dapat dibuka" << endl;
+    }
 }
