@@ -11,6 +11,7 @@ struct Buku {
 };
 
 void loadData(Buku buku[], int &jumlahData);
+void tampilkanData(Buku buku[], int &jumlahData);
 void tambahData(Buku *buku[]);
 void saveData(Buku buku[], int &jumlahData);
 
@@ -42,7 +43,7 @@ int main() {
         } else if(pilihan == 2) {
             cout << "Pengembalian Buku" << endl;
         } else if(pilihan == 3) {
-            cout << "Lihat Daftar Buku" << endl;
+            tampilkanData(buku, jumlahData);
         } else if(pilihan == 4) {
             cout << "Cari Buku" << endl;
         } else if(pilihan == 5) {
@@ -75,6 +76,15 @@ void loadData(Buku buku[], int &jumlahData) {
         ofstream file("buku.txt");
         file.close();
         cout << "File buku.txt tidak ditemukan, file baru telah dibuat." << endl;
+    }
+}
+
+void tampilkanData(Buku buku[], int &jumlahData) {
+    for(int i = 0; i < jumlahData; i++) {
+        cout << "Judul: " << buku[i].judul << endl;
+        cout << "Pengarang: " << buku[i].pengarang << endl;
+        cout << "Tahun terbit: " << buku[i].tahunTerbit << endl;
+        cout << "Jumlah: " << buku[i].jumlah << endl;
     }
 }
 
