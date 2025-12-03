@@ -12,6 +12,8 @@ struct Buku {
 
 int main() {
 
+    Buku buku[100];
+    int jumlahData = 0;
     int pilihan = 0;
     
     cout << "-----Selamat datang di Perpustakaan Mini-----" << endl;
