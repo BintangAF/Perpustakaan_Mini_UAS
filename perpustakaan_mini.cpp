@@ -12,7 +12,7 @@ struct Buku {
 
 int main() {
 
-    int pilihan;
+    int pilihan = 0;
     
     cout << "-----Selamat datang di Perpustakaan Mini-----" << endl;
     cout << "1. Peminjaman Buku" << endl;
