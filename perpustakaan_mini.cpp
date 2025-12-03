@@ -68,6 +68,8 @@ void loadData(Buku buku[], int &jumlahData) {
         }
         file.close();
     } else {
-        cout << "File tidak dapat dibuka" << endl;
+        ofstream file("buku.txt");
+        file.close();
+        cout << "File buku.txt tidak ditemukan, file baru telah dibuat." << endl;
     }
 }
