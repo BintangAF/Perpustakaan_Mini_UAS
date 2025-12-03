@@ -5,6 +5,8 @@ using namespace std;
 
 int main() {
 
+    int pilihan;
+    
     cout << "-----Selamat datang di Perpustakaan Mini-----" << endl;
     cout << "1. Peminjaman Buku" << endl;
     cout << "2. Pengembalian Buku" << endl;
@@ -15,5 +17,8 @@ int main() {
     cout << "7. Hapus Buku" << endl;
     cout << "8. Exit" << endl;
 
+    cout << "Masukkan pilihan Anda: ";
+    cin >> pilihan;
+    
     return 0;
 }
