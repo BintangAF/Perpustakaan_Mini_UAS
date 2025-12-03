@@ -3,6 +3,13 @@
 
 using namespace std;
 
+struct Buku {
+    string judul;
+    string pengarang;
+    int tahunTerbit;
+    int jumlah;
+};
+
 int main() {
 
     int pilihan;
