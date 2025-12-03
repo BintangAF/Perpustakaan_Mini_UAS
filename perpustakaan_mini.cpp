@@ -12,6 +12,7 @@ struct Buku {
 
 void loadData(Buku buku[], int &jumlahData);
 void tambahData(Buku *buku[]);
+void saveData(Buku buku[], int &jumlahData);
 
 int main() {
 
@@ -53,7 +54,7 @@ int main() {
         } else if(pilihan == 7) {
             cout << "Hapus Buku" << endl;
         } else if(pilihan == 8) {
-            cout << "Exit" << endl;
+            saveData(buku, jumlahData);
         } else {
             cout << "Pilihan tidak valid" << endl;
         }
@@ -90,4 +91,14 @@ void tambahData(Buku *buku) {
     cout << "Jumlah: ";
     cin >> buku->jumlah;
     cin.ignore();
+}
+
+void saveData(Buku buku[], int &jumlahData) {
+    ofstream file;
+    file.open("buku.txt", ios::app);
+    for(int i = 0; i < jumlahData; i++) {
+        file << buku[i].judul << " " << buku[i].pengarang << " " << buku[i].tahunTerbit << " " << buku[i].jumlah << endl;
+    }
+    file.close();
+    cout << "Data berhasil disimpan" << endl;
 }
