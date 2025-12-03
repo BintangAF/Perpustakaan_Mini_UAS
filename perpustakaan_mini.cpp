@@ -10,6 +10,8 @@ struct Buku {
     int jumlah;
 };
 
+void tambahData(Buku *buku[]);
+
 int main() {
 
     Buku buku[100];
@@ -41,7 +43,9 @@ int main() {
         } else if(pilihan == 4) {
             cout << "Cari Buku" << endl;
         } else if(pilihan == 5) {
-            cout << "Tambah Buku" << endl;
+            tambahData(&buku[jumlahData]);
+            jumlahData++;
+            
         } else if(pilihan == 6) {
             cout << "Update Buku" << endl;
         } else if(pilihan == 7) {
@@ -55,4 +59,20 @@ int main() {
     } while (pilihan != 8);
     
     return 0;
+}
+
+
+void tambahData(Buku *buku) {
+    cout << "Judul: ";
+    getline(cin, buku->judul);
+
+    cout << "Pengarang: ";
+    getline(cin, buku->pengarang);
+
+    cout << "Tahun terbit: ";
+    cin >> buku->pengarang;
+    
+    cout << "Jumlah: ";
+    cin >> buku->jumlah;
+    cin.ignore();
 }
