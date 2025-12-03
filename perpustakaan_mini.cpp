@@ -17,8 +17,33 @@ int main() {
     cout << "7. Hapus Buku" << endl;
     cout << "8. Exit" << endl;
 
-    cout << "Masukkan pilihan Anda: ";
-    cin >> pilihan;
+    do
+    {
+        cout << "Masukkan pilihan Anda: ";
+        cin >> pilihan;
+        cin.ignore();
+
+        if(pilihan == 1) {
+            cout << "Peminjaman Buku" << endl;
+        } else if(pilihan == 2) {
+            cout << "Pengembalian Buku" << endl;
+        } else if(pilihan == 3) {
+            cout << "Lihat Daftar Buku" << endl;
+        } else if(pilihan == 4) {
+            cout << "Cari Buku" << endl;
+        } else if(pilihan == 5) {
+            cout << "Tambah Buku" << endl;
+        } else if(pilihan == 6) {
+            cout << "Update Buku" << endl;
+        } else if(pilihan == 7) {
+            cout << "Hapus Buku" << endl;
+        } else if(pilihan == 8) {
+            cout << "Exit" << endl;
+        } else {
+            cout << "Pilihan tidak valid" << endl;
+        }
+        
+    } while (pilihan != 8);
     
     return 0;
 }
